@@ -19,7 +19,7 @@ steps:
   displayName: 'Install Dependencies'
 
 - script: |
-    python -m pytest tests/
+    python -m pytest D:\FAST Semester 7\DevOps\Project\
     pylint D:\FAST Semester 7\DevOps\Project\app.py
   displayName: 'Run Tests and Linting'
 
