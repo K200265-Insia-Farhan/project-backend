@@ -14,7 +14,9 @@ steps:
     addToPath: true
 
 - script: |
+    # Install Flask
     python -m pip install --upgrade pip
+    python -m pip install Flask
   displayName: 'Install Dependencies'
 
 - task: PublishPipelineArtifact@1
