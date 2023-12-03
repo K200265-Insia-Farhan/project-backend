@@ -21,3 +21,19 @@ steps:
   inputs:
     targetPath: '$(Build.ArtifactStagingDirectory)'
     artifact: 'backend-artifact'
+
+- script: |
+    #!/bin/bash
+
+    # Slack Webhook URL
+    SLACK_WEBHOOK_URL='https://hooks.slack.com/services/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'
+
+    # Slack channel
+    SLACK_CHANNEL='#semester-project'
+
+    # Message to send
+    MESSAGE='Backend build completed successfully!'
+
+    # Send message to Slack
+    curl -X POST -H 'Content-type: application/json' --data "{\"channel\":\"$SLACK_CHANNEL\",\"text\":\"$MESSAGE\"}" $SLACK_WEBHOOK_URL
+  displayName: 'Send Slack Notification'
