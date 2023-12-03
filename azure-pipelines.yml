@@ -23,8 +23,11 @@ steps:
     artifact: 'backend-artifact'
 
 - script: |
+    # Change to the directory containing the test_app.py file
+    cd $(Build.SourcesDirectory)
+    
     # Run tests by specifying the test file
-    python -m unittest $(Build.SourcesDirectory)\test_app.py
+    python -m unittest test_app.py
   displayName: 'Run Unit Tests'
 
 - script: |
