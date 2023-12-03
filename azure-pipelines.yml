@@ -14,6 +14,11 @@ steps:
     addToPath: true
 
 - script: |
+    python -m pip install --upgrade pip
+    pip install pytest pylint
+  displayName: 'Install Dependencies'
+
+- script: |
     python -m pytest tests/
     pylint D:\FAST Semester 7\DevOps\Project\app.py
   displayName: 'Run Tests and Linting'
