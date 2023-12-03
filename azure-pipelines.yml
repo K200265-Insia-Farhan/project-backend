@@ -19,6 +19,7 @@ steps:
   displayName: 'Install Dependencies'
 
 - script: |
+    mkdir tests
     python -m pytest ./tests/
     pylint D:\FAST Semester 7\DevOps\Project\app.py
   displayName: 'Run Tests and Linting'
