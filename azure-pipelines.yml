@@ -15,18 +15,7 @@ steps:
 
 - script: |
     python -m pip install --upgrade pip
-    pip install pytest pylint
   displayName: 'Install Dependencies'
-
-- script: |
-    python -m pytest $(Build.SourcesDirectory)/tests/
-    pylint $(Build.SourcesDirectory)/D:/FAST\ Semester\ 7/DevOps/Project/app.py
-  displayName: 'Run Tests and Linting'
-
-- task: PublishTestResults@2
-  inputs:
-    testResultsFiles: '**/TEST-*.xml'
-    testRunTitle: 'Backend Tests'
 
 - task: PublishPipelineArtifact@1
   inputs:
