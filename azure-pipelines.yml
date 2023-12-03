@@ -24,7 +24,7 @@ steps:
 
 - script: |
     # Run tests by specifying the test file
-    python -m unittest $(System.DefaultWorkingDirectory)\test_app.py
+    python -m unittest $(Build.SourcesDirectory)\test_app.py
   displayName: 'Run Unit Tests'
 
 - script: |
