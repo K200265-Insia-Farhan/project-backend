@@ -23,6 +23,11 @@ steps:
     artifact: 'backend-artifact'
 
 - script: |
+    # Run tests by specifying the test file
+    python -m unittest $(Build.SourcesDirectory)/test_app.py
+  displayName: 'Run Unit Tests'
+
+- script: |
     #!/bin/bash
 
     # Slack Webhook URL
